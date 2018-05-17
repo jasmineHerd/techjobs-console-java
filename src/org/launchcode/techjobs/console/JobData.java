@@ -89,17 +89,17 @@ public class JobData {
     public static ArrayList<HashMap<String, String>> findByValue(String searchChoice) {
         loadData();
 
-        ArrayList<HashMap<String, String>> specificJobs = new ArrayList<>();
-        ArrayList<HashMap<String, String>> specificJob = new ArrayList<>();
+        ArrayList<HashMap<String, String>> jobsValue = new ArrayList<>();
+        ArrayList<HashMap<String, String>> jobValue = new ArrayList<>();
 
         for(int i = 0; i < allJobs.size(); i++) {
 
             for (Map.Entry<String, String> job : allJobs.get(i).entrySet()) {
                 //System.out.println(job.getKey() + ": " + job.getValue());
-                specificJob.addAll(findByColumnAndValue(job.getKey(), searchChoice));
+                jobValue.addAll(findByColumnAndValue(job.getKey(), searchChoice));
             }
         }
-        return specificJobs;
+        return jobsValue;
     }
 
     /**
